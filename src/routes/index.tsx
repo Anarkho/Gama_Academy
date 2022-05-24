@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../views/Home";
 import Contact from "../views/Contact";
+import SignUp from "../views/SignUp";
+import SignIn from "../views/SignIn";
 
 const Rotas: React.FC = () => {
   return (
@@ -10,6 +12,8 @@ const Rotas: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </BrowserRouter>
   );
