@@ -3,15 +3,12 @@ import { Container } from "./style";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
 
 interface IData {
-  registro: string;
   name: string;
   email: string;
-  telefone: string;
-  celular: string;
   senha: string;
-  profissão: string;
 }
 
 const SignUp: React.FC = () => {
@@ -29,8 +26,8 @@ const SignUp: React.FC = () => {
           if (response.status === 200) {
             toast.success("Cadastro realizado com sucesso!", {
               hideProgressBar: false,
-              onClose: () => navigate("/signin"),
             });
+            navigate("/signin");
           }
         })
         .catch((err) => {
@@ -42,7 +39,7 @@ const SignUp: React.FC = () => {
   );
 
   if (load) {
-    return <div>carregando...</div>;
+    return <Loader />;
   }
 
   return (
@@ -50,12 +47,6 @@ const SignUp: React.FC = () => {
       <h1>Inscreva-se</h1>
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <label htmlFor="">Registro</label>
-          <input
-            type="text"
-            placeholder="Informe seu registro"
-            onChange={(e) => setData({ ...data, registro: e.target.value })}
-          />
           <label htmlFor="">Nome</label>
           <input
             type="text"
@@ -68,29 +59,11 @@ const SignUp: React.FC = () => {
             placeholder="Informe seu email"
             onChange={(e) => setData({ ...data, email: e.target.value })}
           />
-          <label htmlFor="">Telefone</label>
-          <input
-            type="tel"
-            placeholder="Informe seu telefone"
-            onChange={(e) => setData({ ...data, telefone: e.target.value })}
-          />
-          <label htmlFor="">Celular</label>
-          <input
-            type="tel"
-            placeholder="Informe seu celular"
-            onChange={(e) => setData({ ...data, celular: e.target.value })}
-          />
           <label htmlFor="">Senha</label>
           <input
             type="password"
             placeholder="Informe sua senha"
             onChange={(e) => setData({ ...data, senha: e.target.value })}
-          />
-          <label htmlFor="">Profissão</label>
-          <input
-            type="text"
-            placeholder="Informe sua Profissão"
-            onChange={(e) => setData({ ...data, profissão: e.target.value })}
           />
           <input type="submit" value="Cadastrar" />
         </fieldset>
