@@ -22,10 +22,10 @@ const SignUp: React.FC = () => {
       setLoad(true);
       api
         .post("", data)
-        .then((response) => {
+        .then((response: any) => {
           if (response.status === 200) {
             toast.success("Cadastro realizado com sucesso!", {
-              hideProgressBar: false,
+              autoClose: false,
             });
             navigate("/signin");
           }

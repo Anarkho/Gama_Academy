@@ -17,11 +17,12 @@ const Contact: React.FC = () => {
       e.preventDefault();
       api
         .post("5a65e7d2-dafe-49d2-af09-34d42df11c39", data)
-        .then((response) => {
+        .then((response: any) => {
           if (response.status === 200) {
             setSubmit(true);
           }
-        }).catch(err => console.log(err))
+        })
+        .catch((err: any) => console.log(err));
     },
     [data]
   );
@@ -58,7 +59,7 @@ const Contact: React.FC = () => {
             </form>
           )}
         </div>
-        <Link to="/">Acessar pagina Home</Link>
+        <Link to="/home">Acessar pagina Home</Link>
       </div>
     </Container>
   );

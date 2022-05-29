@@ -24,9 +24,9 @@ const SignIn: React.FC = () => {
         .then((response) => {
           if (response.status === 200) {
             toast.success("Logado com sucesso!", {
-              hideProgressBar: false,
+              autoClose: false
             });
-            navigate("/");
+            navigate("/home");
           }
         })
         .catch((err) => {
