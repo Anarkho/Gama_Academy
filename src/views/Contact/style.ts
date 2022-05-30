@@ -33,7 +33,6 @@ export const Container = styled.div`
         textarea{
           border-radius: 10px;
         }
-       in
       }
     }
   }
