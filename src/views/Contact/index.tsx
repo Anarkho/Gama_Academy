@@ -8,6 +8,7 @@ import Nav from "../../components/Nav";
 interface IData {
   name: string;
   email: string;
+  comment: string;
 }
 
 const Contact: React.FC = () => {
@@ -58,7 +59,7 @@ const Contact: React.FC = () => {
                 />
                 <br />
                 <label htmlFor="">Comentario: </label><br/>
-                <textarea cols={30} rows={5}/><br/>
+                <textarea cols={30} rows={5} onChange={(e) => setData({ ...data, comment: e.target.value })}/><br/>
                 <input type="submit" value="Enviar" />
                 <br />
               </fieldset>
