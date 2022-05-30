@@ -1,6 +1,8 @@
 import React, { useState } from "react"; //? rfc
 import { Container, Button } from "./style";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 
 const Home: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -10,6 +12,8 @@ const Home: React.FC = () => {
     navigate("/");
   }
   return (
+    <>
+    <Nav/>
     <Container>
       {isLogin ? (
         <>
@@ -27,6 +31,8 @@ const Home: React.FC = () => {
       )}
       <Button onClick={() => setIsLogin(!isLogin)}>Sair</Button>
     </Container>
+    <Footer/>
+    </>
   );
 };
 

@@ -24,10 +24,16 @@ export const Container = styled.div`
         input {
           margin: 10px 5px;
           padding: 5px;
+          border-radius: 10px;
+
+          &[type='submit']{
+            background-color: #6cd249 ;
+          }
         }
-        button{
-          margin: 10px ;
+        textarea{
+          border-radius: 10px;
         }
+       in
       }
     }
   }

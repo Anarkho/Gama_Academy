@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  border: solid red 1px;
   box-sizing: border-box;
 `;
 

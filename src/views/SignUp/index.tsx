@@ -25,7 +25,7 @@ const SignUp: React.FC = () => {
         .then((response: any) => {
           if (response.status === 200) {
             toast.success("Cadastro realizado com sucesso!", {
-              autoClose: false,
+            autoClose: 1000
             });
             navigate("/signin");
           }

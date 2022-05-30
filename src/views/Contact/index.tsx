@@ -2,6 +2,8 @@ import React, { useState, useCallback, FormEvent } from "react";
 import { Container } from "./style";
 import { Link } from "react-router-dom";
 import { api } from "../../services/api";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 
 interface IData {
   name: string;
@@ -28,9 +30,11 @@ const Contact: React.FC = () => {
   );
 
   return (
+    <>
+    <Nav/>
     <Container>
       <div className="form-wrapper">
-        <h1>Contact</h1>
+        <h1>Formulario de contato</h1>
         <div className="card">
           {submit ? (
             <div>
@@ -53,7 +57,9 @@ const Contact: React.FC = () => {
                   onChange={(e) => setData({ ...data, email: e.target.value })}
                 />
                 <br />
-                <input type="submit" value="Cadastrar" />
+                <label htmlFor="">Comentario: </label><br/>
+                <textarea cols={30} rows={5}/><br/>
+                <input type="submit" value="Enviar" />
                 <br />
               </fieldset>
             </form>
@@ -62,6 +68,8 @@ const Contact: React.FC = () => {
         <Link to="/home">Acessar pagina Home</Link>
       </div>
     </Container>
+    <Footer/>
+    </>
   );
 };
 

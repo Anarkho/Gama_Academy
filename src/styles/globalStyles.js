@@ -9,5 +9,6 @@ export default createGlobalStyle`
     color: #000;
     font-size: 1.2rem ;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden ;
 }
 `;

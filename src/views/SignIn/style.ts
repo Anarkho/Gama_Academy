@@ -6,7 +6,6 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  border: solid black 1px;
 
   fieldset {
     display: flex;
